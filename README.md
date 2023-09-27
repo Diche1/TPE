@@ -2,7 +2,7 @@
 
 Integrantes y Emails:
 
-Del Canto Agustin - agustindelcantodg@gmail.com 
+|Del Canto Agustin || agustindelcantodg@gmail.com | 
 Di Cheronimo Franco - d1ch33@hotmail.com
 
 Tematica del TPE:
