@@ -1,19 +1,23 @@
-# TPE
+#PRÁCTICO ESPECIAL WEB2 2023
 
-Integrantes y Emails:
+## ***Integrantes y Emails:***
 
-|Del Canto Agustin || agustindelcantodg@gmail.com | 
-Di Cheronimo Franco - d1ch33@hotmail.com
+- Del Canto Agustin - agustindelcantodg@gmail.com 
+- Di Cheronimo Franco - d1ch33@hotmail.com
 
-Tematica del TPE:
+- **CRESTA 2023**
 
-Venta de motores electricos.
+#**Tematica del TPE:**
 
-La temática se centra en la gestión de datos relacionados con la venta de motores eléctricos y su relación con clientes y usuarios en un sistema.
+## Venta de motores electricos.
 
-Descripcion :
-La tabla "Usuario" Esta relacionada con los clientes.
-La tabla "Cliente" representa la información de los clientes que compran motores.
-La tabla "Producto (Motor)" contiene detalles sobre los motores disponibles. 
-La tabla "Compra" actúa como una tabla intermedia para registrar las transacciones de compra, lo que facilita el seguimiento de las compras realizadas por los clientes.
+**Descripcion:**
+La idea es crear una base de datos para una compañia de motores electricos, en la misma asociariamos la tabla Usuario, con los administradores o personal de la empresa, proximamente se gestionaria el stock disponible con las ventas realizadas, a futuro seguramente un listado de clientes, marcas especificas, etc.
+
+- La tabla "Usuario", sera distinada para el ingreso de Administradores.
+- La tabla "Producto" contiene detalles sobre los motores disponibles. 
+- La tabla "Compra", esta conectada a "Productos" en una relacion 1 a N.
+
 En conjunto, ayuda a organizar y relacionar los datos clave en un sistema de venta de motores eléctricos.
+
+###Gracias por leer!
