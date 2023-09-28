@@ -3,7 +3,7 @@
 ## ***Integrantes y Emails:***
 Integrantes|Emails
 -|-
-Del Canto Agustin| agustindelcanto@gmail.com
+Del Canto Agustin| agustindelcantodg@gmail.com
 Di Cheronimo Franco| d1ch33@hotmail.com
 
 
@@ -30,4 +30,4 @@ La idea es crear una base de datos para una compañia de motores electricos, en 
 
 En conjunto, ayuda a organizar y relacionar los datos clave en un sistema de venta de motores eléctricos.
 
-###Gracias por leer!
+### Gracias por leer!
