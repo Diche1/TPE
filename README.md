@@ -4,7 +4,7 @@
 Integrantes|Emails
 -|-
 Del Canto Agustin| agustindelcantodg@gmail.com
-Di Cheronimo Franco| d1ch33@hotmail.com
+Di Cheronimo Franco| fr4nc0d1ch3@gmail.com
 
 
 - **CRESTA 2023**
