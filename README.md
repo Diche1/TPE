@@ -1,9 +1,11 @@
 #PRÁCTICO ESPECIAL WEB2 2023
 
 ## ***Integrantes y Emails:***
+Integrantes|Emails
+-|-
+Del Canto Agustin| agustindelcanto@gmail.com
+Di Cheronimo Franco| d1ch33@hotmail.com
 
-- Del Canto Agustin - agustindelcantodg@gmail.com 
-- Di Cheronimo Franco - d1ch33@hotmail.com
 
 - **CRESTA 2023**
 
