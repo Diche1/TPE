@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2023 a las 00:41:18
+-- Tiempo de generación: 18-10-2023 a las 23:46:34
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,26 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compra`
+-- Estructura de tabla para la tabla `categoria`
 --
 
-CREATE TABLE `compra` (
+CREATE TABLE `categoria` (
   `Id` int(50) NOT NULL,
   `Id_producto` int(50) NOT NULL,
-  `Cantidad` tinyint(10) NOT NULL,
-  `FormaPago` varchar(50) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Total` int(50) NOT NULL
+  `Tipo` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `compra`
+-- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `compra` (`Id`, `Id_producto`, `Cantidad`, `FormaPago`, `Fecha`, `Total`) VALUES
-(1, 1, 4, 'CONTADO', '2023-10-05', 150000),
-(2, 2, 1, 'CHEQUE DIFERIDO', '2023-10-12', 30000),
-(3, 3, 2, '12 CUOTAS', '2023-10-16', 90000);
+INSERT INTO `categoria` (`Id`, `Id_producto`, `Tipo`) VALUES
+(1, 1, '4'),
+(2, 2, '1'),
+(3, 3, '2');
 
 -- --------------------------------------------------------
 
@@ -53,7 +50,7 @@ INSERT INTO `compra` (`Id`, `Id_producto`, `Cantidad`, `FormaPago`, `Fecha`, `To
 
 CREATE TABLE `productos` (
   `Id` int(20) NOT NULL,
-  `Fabricante` varchar(30) NOT NULL,
+  `Nombre` varchar(90) NOT NULL,
   `Potencia` int(10) NOT NULL,
   `Velocidad` int(10) NOT NULL,
   `Voltaje` smallint(10) NOT NULL,
@@ -64,10 +61,11 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`Id`, `Fabricante`, `Potencia`, `Velocidad`, `Voltaje`, `Frecuencia`) VALUES
-(1, 'DASA', 75, 1400, 220, 50),
-(2, 'DASA', 1, 1400, 110, 60),
-(3, 'MEMO', 4, 2800, 220, 60);
+INSERT INTO `productos` (`Id`, `Nombre`, `Potencia`, `Velocidad`, `Voltaje`, `Frecuencia`) VALUES
+(1, 'DAFA', 75, 1400, 220, 50),
+(2, 'DAFA', 1, 1400, 110, 60),
+(3, 'AMBE', 4, 2800, 220, 60),
+(4, 'SIEMENS', 10, 1400, 380, 50);
 
 -- --------------------------------------------------------
 
@@ -86,9 +84,9 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `compra`
+-- Indices de la tabla `categoria`
 --
-ALTER TABLE `compra`
+ALTER TABLE `categoria`
   ADD PRIMARY KEY (`Id`),
   ADD KEY `Id_producto` (`Id_producto`);
 
@@ -109,26 +107,26 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `compra`
+-- AUTO_INCREMENT de la tabla `categoria`
 --
-ALTER TABLE `compra`
+ALTER TABLE `categoria`
   MODIFY `Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `compra`
+-- Filtros para la tabla `categoria`
 --
-ALTER TABLE `compra`
-  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`Id_producto`) REFERENCES `productos` (`Id`);
+ALTER TABLE `categoria`
+  ADD CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`Id_producto`) REFERENCES `productos` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
