@@ -1,7 +1,7 @@
 {include file = 'header.tpl'}
 
 
-pija AGUS RE PUTO
+Bienvenidos a la pagina de motores electricos creada por los pi
 
 
 {include file= 'footer.tpl'}
