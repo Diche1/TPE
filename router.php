@@ -27,7 +27,7 @@ switch ($params[0]) {
         $motorController->getProductos();
         break;
     case 'categorias': //muestra listado de categorias
-        $motorController->getCategorias();
+        $motorController->getMarcas();
         break;
     default: $motorController->showHome();
 }

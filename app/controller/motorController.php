@@ -23,10 +23,10 @@ class motorcontroller
         $this->view->showProductos($productos);
     }
 
-    function getCategorias()
+    function getMarcas()
     {
-        $categorias = $this->model->getCategorias();
-        $this->view->showCategorias($categorias);
+        $marcas = $this->model->getMarcas();
+        $this->view->showMarcas($marcas);
     }
 
     /*function getArticles()

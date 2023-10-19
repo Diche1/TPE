@@ -8,7 +8,7 @@
         <tr>
             <td>Id
             </td>
-            <td>Producto
+            <td>Id_Marca
             </td>
             <td>Potencia
             </td>
@@ -25,7 +25,7 @@
             <tr>
                 <td>{$product->Id}
                 </td>
-                <td>{$product->Nombre}
+                <td>{$product->Id_Marca}
                 </td>
                 <td>{$product->Potencia}
                 </td>

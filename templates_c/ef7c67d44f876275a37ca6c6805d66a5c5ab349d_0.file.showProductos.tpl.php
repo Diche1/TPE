@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-19 01:57:47
+/* Smarty version 4.2.1, created on 2023-10-19 02:50:07
   from 'C:\xampp\htdocs\web2\TPE\templates\showProductos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_653070fb6dfd68_22725779',
+  'unifunc' => 'content_65307d3f537dd1_02606192',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef7c67d44f876275a37ca6c6805d66a5c5ab349d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\showProductos.tpl',
-      1 => 1697673462,
+      1 => 1697676599,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_653070fb6dfd68_22725779 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65307d3f537dd1_02606192 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -34,7 +34,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
         <tr>
             <td>Id
             </td>
-            <td>Producto
+            <td>Id_Marca
             </td>
             <td>Potencia
             </td>
@@ -57,7 +57,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Id;?>
 
                 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Nombre;?>
+                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Id_Marca;?>
 
                 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Potencia;?>

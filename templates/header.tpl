@@ -15,7 +15,9 @@
           <a class="nav-link" href="productos">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categorias">Categorias</a>
+          <a class="nav-link" href="categorias">Marcas</a>
+
+        {* ver porque no me deja cambiar el href "categorias" por marcas *}
         </li>
       </ul>
       <span class="navbar-text">

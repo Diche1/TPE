@@ -19,11 +19,11 @@ class motorView
         $this->smarty->display(PATH . '/templates/showProductos.tpl');
     }
 
-    function showCategorias($categorias)
+    function showMarcas($marcas)
     {
 
-        $this->smarty->assign('categorias', $categorias);
-        $this->smarty->display(PATH . '/templates/showCategorias.tpl');
+        $this->smarty->assign('marcas', $marcas);
+        $this->smarty->display(PATH . '/templates/showMarcas.tpl');
 
     }
     /*function showArticles($articles)

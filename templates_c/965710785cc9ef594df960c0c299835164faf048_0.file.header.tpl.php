@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-19 01:16:37
+/* Smarty version 4.2.1, created on 2023-10-19 03:26:55
   from 'C:\xampp\htdocs\web2\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_653067559cd412_44646618',
+  'unifunc' => 'content_653085df42a4a0_39204748',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '965710785cc9ef594df960c0c299835164faf048' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\header.tpl',
-      1 => 1697670991,
+      1 => 1697678814,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:head.tpl' => 1,
   ),
 ),false)) {
-function content_653067559cd412_44646618 (Smarty_Internal_Template $_smarty_tpl) {
+function content_653085df42a4a0_39204748 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,7 +40,7 @@ $_smarty_tpl->_subTemplateRender('file:head.tpl', $_smarty_tpl->cache_id, $_smar
           <a class="nav-link" href="productos">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="categorias">Categorias</a>
+          <a class="nav-link" href="categorias">Marcas</a>
         </li>
       </ul>
       <span class="navbar-text">
