@@ -1,8 +1,7 @@
-iincluide 'header.tpl'
+{include file = 'header.tpl'}
 
 
-body
+pija AGUS RE PUTO
 
 
-
-iincluide 'footer.tpl'
+{include file= 'footer.tpl'}

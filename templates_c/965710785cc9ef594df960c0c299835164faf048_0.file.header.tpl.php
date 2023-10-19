@@ -1,4 +1,29 @@
-{include file='head.tpl'}
+<?php
+/* Smarty version 4.2.1, created on 2023-10-19 01:16:37
+  from 'C:\xampp\htdocs\web2\TPE\templates\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.2.1',
+  'unifunc' => 'content_653067559cd412_44646618',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '965710785cc9ef594df960c0c299835164faf048' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\header.tpl',
+      1 => 1697670991,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:head.tpl' => 1,
+  ),
+),false)) {
+function content_653067559cd412_44646618 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender('file:head.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -19,8 +44,8 @@
         </li>
       </ul>
       <span class="navbar-text">
-       {* Armar la huea para el menu --  Navbar text with an inline element  *}
-      </span>
+             </span>
     </div>
   </div>
-</nav>
+</nav><?php }
+}

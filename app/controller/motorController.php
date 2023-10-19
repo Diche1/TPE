@@ -1,26 +1,37 @@
 <?php
 require_once(PATH . '/config.php');
-require_once(PATH . '/app/models/motormodels.php');
-require_once(PATH . '/app/views/motorviews.php');
+require_once(PATH . '/app/models/motorModel.php');
+require_once(PATH . '/app/views/motorView.php');
 
-class MotorController
+class motorcontroller
 {
     private $model;
     private $view;
 
     public function __construct()
     {
-        $this->model = new MotorModels;
-        $this->view = new MmotorViews;
+        $this->model = new motorModel;
+        $this->view = new motorView;
         /*session_start();*/
         /*if (!isset($_SESSION['logged'])) {
             $_SESSION['logged'] = false;
         }*/
     }
+    function getProductos()
+    {
+        $productos = $this->model->getProductos();
+        $this->view->showProductos($productos);
+    }
+
+    function getCategorias()
+    {
+        $categorias = $this->model->getCategorias();
+        $this->view->showCategorias($categorias);
+    }
 
     /*function getArticles()
     {
-        //Busco todos los articulos.
+        //Busco todos los articulos .
         $articles = $this->model->getArticles();
         //si existen articulos:
         if ($articles) {
