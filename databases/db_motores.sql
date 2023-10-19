@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2023 a las 23:46:34
+-- Tiempo de generación: 19-10-2023 a las 23:10:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,23 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Estructura de tabla para la tabla `marcas`
 --
 
-CREATE TABLE `categoria` (
-  `Id` int(50) NOT NULL,
-  `Id_producto` int(50) NOT NULL,
-  `Tipo` varchar(90) NOT NULL
+CREATE TABLE `marcas` (
+  `Id` int(200) NOT NULL,
+  `Fabricante` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Volcado de datos para la tabla `marcas`
 --
 
-INSERT INTO `categoria` (`Id`, `Id_producto`, `Tipo`) VALUES
-(1, 1, '4'),
-(2, 2, '1'),
-(3, 3, '2');
+INSERT INTO `marcas` (`Id`, `Fabricante`) VALUES
+(1, 'Siemens'),
+(2, 'Ambe'),
+(3, 'Dafa'),
+(4, 'Weg');
 
 -- --------------------------------------------------------
 
@@ -49,23 +49,13 @@ INSERT INTO `categoria` (`Id`, `Id_producto`, `Tipo`) VALUES
 --
 
 CREATE TABLE `productos` (
-  `Id` int(20) NOT NULL,
-  `Nombre` varchar(90) NOT NULL,
-  `Potencia` int(10) NOT NULL,
-  `Velocidad` int(10) NOT NULL,
-  `Voltaje` smallint(10) NOT NULL,
-  `Frecuencia` tinyint(10) NOT NULL
+  `Id` int(11) NOT NULL,
+  `Id_marca` int(200) NOT NULL,
+  `Potencia` int(80) NOT NULL,
+  `Velocidad` int(80) NOT NULL,
+  `Voltaje` int(80) NOT NULL,
+  `Frecuencia` int(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `productos`
---
-
-INSERT INTO `productos` (`Id`, `Nombre`, `Potencia`, `Velocidad`, `Voltaje`, `Frecuencia`) VALUES
-(1, 'DAFA', 75, 1400, 220, 50),
-(2, 'DAFA', 1, 1400, 110, 60),
-(3, 'AMBE', 4, 2800, 220, 60),
-(4, 'SIEMENS', 10, 1400, 380, 50);
 
 -- --------------------------------------------------------
 
@@ -84,17 +74,17 @@ CREATE TABLE `usuario` (
 --
 
 --
--- Indices de la tabla `categoria`
+-- Indices de la tabla `marcas`
 --
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `Id_producto` (`Id_producto`);
+ALTER TABLE `marcas`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `Id_marca` (`Id_marca`);
 
 --
 -- Indices de la tabla `usuario`
@@ -107,26 +97,16 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `categoria`
+-- AUTO_INCREMENT de la tabla `marcas`
 --
-ALTER TABLE `categoria`
-  MODIFY `Id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `marcas`
+  MODIFY `Id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `categoria`
---
-ALTER TABLE `categoria`
-  ADD CONSTRAINT `categoria_ibfk_1` FOREIGN KEY (`Id_producto`) REFERENCES `productos` (`Id`);
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
