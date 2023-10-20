@@ -34,16 +34,17 @@ switch ($params[0]) {
         break;
     case 'altaUsuario': // agrega el usuario
         $motorController->addUsuario();
+        break;
     case 'login':
         $motorController->showLoginForm();
             break;
     case 'validar':
             $motorController->validarLogin();
-            
+            break;
+            case 'error':
+            $motorController -> ShowErrorValidar();    
+        
         break;
     default:
         $motorController->showHome();
 }
-
-
-?>

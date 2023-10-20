@@ -38,5 +38,9 @@ Class motorview
         //$this->tpl->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/showLogin.tpl');
     }
+    function  ShowErrorValidar(){
+        //$this->tpl->assign('logged', $_SESSION['logged']);
+        $this->smarty->display(PATH . '/templates/errorValidacion.tpl');
+    }
 }
 ?>

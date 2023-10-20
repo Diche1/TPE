@@ -3,70 +3,91 @@ require_once(PATH . '/config.php');
 require_once(PATH . '/app/models/motorModel.php');
 require_once(PATH . '/app/views/motorView.php');
 
-class motorcontroller
+class MotorController
 {
     private $model;
     private $view;
 
     public function __construct()
     {
-        $this->model = new motorModel;
-        $this->view = new motorView;
+        $this->model = new MotorModel;
+        $this->view = new MotorView;
         session_start();
         if (!isset($_SESSION['logged'])) {
             $_SESSION['logged'] = false;
         }
     }
-    function getProductos()
+
+    public function getProductos()
     {
         $productos = $this->model->getProductos();
         $this->view->showProductos($productos);
     }
 
-    function getMarcas()
+    public function getMarcas()
     {
         $marcas = $this->model->getMarcas();
         $this->view->showMarcas($marcas);
     }
 
-    function addUsuario()
+    public function addUsuario()
     {
-        /* Se comprueba por post que no este vacio, y luego corrobora los datos uno x uno ( que no esten vacios) */
+        // Comprobar que los campos no están vacíos
         if (!empty($_POST) && !empty($_POST['Email']) && !empty($_POST['nombre']) && !empty($_POST['password'])) {
             $Email = $_POST['Email'];
             $Nombre = $_POST['nombre'];
             $Password = $_POST['password'];
-            /* BUSCA EL EMAIL EN LA TABLA DE USUARIOS, SI EXISTE DEVUELVE TODOS SUS DATOS, Y SINO "FALSO" */
+
+            // Buscar el email en la tabla de usuarios
             $usuario = $this->getUsuario($Email);
+
             if (!$usuario) {
                 $hash = password_hash($Password, PASSWORD_BCRYPT);
                 $usuarioId = $this->model->addUsuario($Email, $Nombre, $hash);
             } else {
-                /* $this->view->showError("Ya existe este Email, no insista"); TODAVIA NO EXISTE showError, hay que hacerlo y descomentar*/
+                // $this->view->showError("Ya existe este Email, no insista"); // FALTA showError
             }
         }
     }
 
-    function getUsuario($Email)
+    public function getUsuario($Email)
     {
         $usuario = $this->model->getUsuario($Email);
         return $usuario;
     }
 
-    function showRegistro()
+    public function showRegistro()
     {
         $this->view->showRegistro();
     }
-    //INICIO DE SESIÓN DE USUARIO//
-    function showLoginForm()
+
+    public function logout()
     {
-        //si aun no está logeado
-        if (!$_SESSION['logged']) {
-            //muestro el formulario
-            $this->view->showLoginForm();
-        }
+        // Destruir la sesión
+        session_destroy();
+
+        // Redirigir al usuario a la página de inicio de sesión u otra página
+        header('Location: ' . BASE_URL . 'login');
     }
-    function validarLogin()//Valida el inicio de sesion
+
+    // INICIO DE SESIÓN DE USUARIO
+    public function showLoginForm()
+    {
+        // Si aún no está logeado
+        if (!$_SESSION['logged']) {
+            // Mostrar el formulario
+            // Si el último instante de actividad fue hace más de x minutos
+            if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 10)) {
+                $this->logout(); // Destruir la sesión y volver al login
+            }
+
+            $_SESSION['LAST_ACTIVITY'] = time(); // Actualizar el último instante de actividad
+        }
+
+        $this->view->showLoginForm();
+    }
+
+    public function validarLogin()
     {
         if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $userEmail = $_POST['email'];
@@ -74,15 +95,21 @@ class motorcontroller
 
             $user = $this->model->getUsuario($userEmail);
 
-            if ($user && password_verify($userPassword, $user->password )) {
-              header('Location: ' . BASE_URL . 'inicio');
+            if ($user && password_verify($userPassword, $user->password)) {
+                header('Location: ' . BASE_URL . 'inicio');
             } else {
-                echo "Acceso denegado";//crear un smarty para volver al login. Y FALTA funcion para cerrar sesion.
+                $user = $this->view->ShowErrorValidar($userEmail);
             }
         }
+        
     }
-    function showHome()
+    public function showErrorValidar()
+    {
+        $this->view->showErrorValidar();
+    }
+    public function showHome()
     {
         $this->view->showHome();
     }
 }
+?>

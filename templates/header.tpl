@@ -1,8 +1,8 @@
 {include file='head.tpl'}
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar w/ text   asdasdsadasdasdasdsadas </a>
+    <a class="navbar-brand" href="#">Navbar w/ text asdasdsadasdasdasdsadas </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,8 +17,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="marcas">Marcas</a>
-        
-        
+        <li class="nav-item">
+          <a class="nav-link" href="login">Iniciar Sesión</a>
+          <li class="nav-item">
+          <a class="nav-link" href="registro">Registrarse</a>
+
+
 
 
         </li>
@@ -29,3 +33,4 @@
     </div>
   </div>
 </nav>
+
