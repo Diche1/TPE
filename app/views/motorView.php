@@ -26,6 +26,11 @@ class motorView
         $this->smarty->display(PATH . '/templates/showMarcas.tpl');
 
     }
+
+    function showRegistro(){
+        $this->smarty->display(PATH . '/templates/showRegistro.tpl');
+    
+    }
     /*function showArticles($articles)
     {
         $this->tpl->assign('logged', $_SESSION['logged']);

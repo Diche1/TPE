@@ -29,6 +29,35 @@ class motorcontroller
         $this->view->showMarcas($marcas);
     }
 
+    function addUsuario()
+    {
+        /* Se comprueba por post que no este vacio, y luego corrobora los datos uno x uno ( que no esten vacios) */
+        if (!empty($_POST) && !empty($_POST['Email']) && !empty($_POST['nombre']) && !empty($_POST['password'])) {
+            $Email = $_POST['Email'];
+            $Nombre = $_POST['nombre'];
+            $Password = $_POST['password'];
+            /* BUSCA EL EMAIL EN LA TABLA DE USUARIOS, SI EXISTE DEVUELVE TODOS SUS DATOS, Y SINO "FALSO" */
+            $usuario = $this->getUsuario($Email);
+            if (!$usuario) {
+                $hash = password_hash($Password, PASSWORD_BCRYPT);
+                $usuarioId = $this->model->addUsuario($Email, $Nombre, $hash);
+            } else {
+                /* $this->view->showError("Ya existe este Email, no insista"); TODAVIA NO EXISTE showError, hay que hacerlo y descomentar*/
+            }
+
+        }
+    }
+
+    function getUsuario($Email)
+    {
+        $usuario = $this->model->getUsuario($Email);
+        return $usuario;
+    }
+
+    function showRegistro(){
+         $this->view->showRegistro();
+    }
+
     /*function getArticles()
     {
         //Busco todos los articulos .
@@ -89,6 +118,7 @@ class motorcontroller
     {
         $this->view->showHome();
     }
+
     /*function showLoginForm()
     {
         //si aun no está logeado
