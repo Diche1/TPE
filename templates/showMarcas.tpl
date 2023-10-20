@@ -14,9 +14,9 @@
         <tbody>
                 {foreach from=$marcas item=$marca}
                         <tr>
-                                <td>{$marcas->Id}
+                                <td>{$marca->Id}
                                 </td>
-                                <td>{$marcas->Marca}
+                                <td>{$marca->Fabricante}
                                 </td>
                         </tr>
                 {/foreach}

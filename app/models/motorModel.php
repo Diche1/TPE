@@ -44,11 +44,11 @@ class motorModel
     function getUsuario($Email)
     {
         $db = $this->PDO;
-
         $query = $db->prepare('SELECT * FROM `usuario` WHERE `Email`=?');
         $query->execute([$Email]);
-        $usuario = $query->fetchAll(PDO::FETCH_OBJ);
+        $usuario = $query->fetch(PDO::FETCH_OBJ); //usas fetch porque solo trae un dato.
         return $usuario;
     }
+  
 }
 ?>
