@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2023 a las 23:10:23
+-- Tiempo de generación: 20-10-2023 a las 03:20:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -66,7 +66,7 @@ CREATE TABLE `productos` (
 CREATE TABLE `usuario` (
   `Email` varchar(90) NOT NULL,
   `nombre` varchar(90) NOT NULL,
-  `contraseña` varchar(90) NOT NULL
+  `password` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,7 +84,7 @@ ALTER TABLE `marcas`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `Id_marca` (`Id_marca`);
+  ADD KEY `Id_marcas` (`Id_marca`);
 
 --
 -- Indices de la tabla `usuario`
@@ -107,6 +107,16 @@ ALTER TABLE `marcas`
 --
 ALTER TABLE `productos`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `Id_marcas` FOREIGN KEY (`Id_marca`) REFERENCES `marcas` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
