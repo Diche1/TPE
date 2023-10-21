@@ -5,7 +5,10 @@
   <h1>Registrate</h1>
 <form action="altaUsuario" method="post">
  <label for="email">Email:</label>
-    <input type="text" name="email" id="Email" required>
+    <input type="text" name="Email" id="Email" required>
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="nombre" name="nombre" id="nombre" required>
     <br>
     <label for="password">Contraseña:</label>
     <input type="password" name="password" id="password" required>

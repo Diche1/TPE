@@ -43,7 +43,12 @@ class MotorController
 
             if (!$usuario) {
                 $hash = password_hash($Password, PASSWORD_BCRYPT);
+                //guarda los datos en la db
                 $usuarioId = $this->model->addUsuario($Email, $Nombre, $hash);
+                //redireccionamos a inicio
+                header('Location: ' . BASE_URL . 'inicio');
+                
+                
             } else {
                 // $this->view->showError("Ya existe este Email, no insista"); // FALTA showError
             }
