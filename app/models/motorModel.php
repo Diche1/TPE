@@ -38,7 +38,7 @@ class motorModel
         /* ----------------------------------------------------------------- */
         $query = $db->prepare('INSERT INTO `usuario`(`Email`,`nombre`,`password`) VALUES (?,?,?)');
         $query->execute([$Email, $nombre, $password]);
-        return $db->lastInsertId(); 
+        return $db->lastInsertId();
 
     }
     function getUsuario($Email)
@@ -49,15 +49,22 @@ class motorModel
         $usuario = $query->fetch(PDO::FETCH_OBJ); //usas fetch porque solo trae un dato.
         return $usuario;
     }
-   
-    function getInfo($Id){
-    $db=$this->PDO;
-    $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE productos.Id=?' );
+
+    function getInfo($Id)
+    {
+        $db = $this->PDO;
+        $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE productos.Id=?');
         $query->execute([$Id]);
         $producto = $query->fetchAll(PDO::FETCH_OBJ);
         return $producto;
-
     }
+
+    function getCategorias()
+    {
+        $db = $this->PDO;
+        $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE marcas.Id=?');
+    }
+    /* Hay que ahcer el get categorias mirar linea 65 */
     /* VER MAS ( DETALLES DE LOS ITEMS ) */
 }
 ?>
