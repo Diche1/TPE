@@ -47,8 +47,6 @@ class MotorController
                 $usuarioId = $this->model->addUsuario($Email, $Nombre, $hash);
                 //redireccionamos a inicio
                 header('Location: ' . BASE_URL . 'inicio');
-                
-                
             } else {
                 // $this->view->showError("Ya existe este Email, no insista"); // FALTA showError
             }
@@ -103,10 +101,9 @@ class MotorController
             if ($user && password_verify($userPassword, $user->password)) {
                 header('Location: ' . BASE_URL . 'inicio');
             } else {
-                $user = $this->view->ShowErrorValidar($userEmail);
+                $user = $this->view->showErrorValidar($userEmail);
             }
         }
-        
     }
     public function showErrorValidar()
     {

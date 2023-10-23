@@ -49,6 +49,8 @@ class motorModel
         $usuario = $query->fetch(PDO::FETCH_OBJ); //usas fetch porque solo trae un dato.
         return $usuario;
     }
+   
+
   
 }
 ?>
