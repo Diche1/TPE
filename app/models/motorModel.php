@@ -15,7 +15,7 @@ class motorModel
     {
         $db = $this->PDO;
 
-        $query = $db->prepare('SELECT * FROM productos');
+        $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id');
         $query->execute();
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
         return $productos;
@@ -50,7 +50,14 @@ class motorModel
         return $usuario;
     }
    
+    function getInfo($Id){
+    $db=$this->PDO;
+    $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE productos.Id=?' );
+        $query->execute([$Id]);
+        $producto = $query->fetchAll(PDO::FETCH_OBJ);
+        return $producto;
 
-  
+    }
+    /* VER MAS ( DETALLES DE LOS ITEMS ) */
 }
 ?>

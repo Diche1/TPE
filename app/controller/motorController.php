@@ -113,5 +113,10 @@ class MotorController
     {
         $this->view->showHome();
     }
+    public function getInfo($Id){
+        $detalles=$this->model->getInfo($Id);
+        $this->view->showInfo($detalles);
+        /* function para ver mas detalles del producto  */
+    }
 }
 ?>

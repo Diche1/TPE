@@ -8,32 +8,25 @@
         <tr>
             <td>Id
             </td>
-            <td>Id_Marca
+            <td>Fabricante
             </td>
             <td>Potencia
             </td>
-            <td>Velocidad
+            <td>Info
             </td>
-            <td>Voltaje
-            </td>
-            <td>Frecuencia
-            </td>
-        </tr>
+            </tr>
     </thead>
     <tbody>
         {foreach from=$productos item=$product}
             <tr>
                 <td>{$product->Id}
                 </td>
-                <td>{$product->Id_Marca}
+                <td>{$product->Fabricante}
                 </td>
-                <td>{$product->Potencia}
+                <td>{$product->Potencia}HP
                 </td>
-                <td>{$product->Velocidad}
-                </td>
-                <td>{$product->Voltaje}
-                </td>
-                <td>{$product->Frecuencia}
+
+                <td><a href="producto/{$product->Id}">Ver Mas</a> {*  *}
                 </td>
             </tr>
         {/foreach}

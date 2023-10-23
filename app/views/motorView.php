@@ -42,5 +42,9 @@ Class motorview
         //$this->tpl->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/errorValidacion.tpl');
     }
+    function showInfo($detalles){
+        $this->smarty->assign('detalles', $detalles);
+        $this->smarty->display(PATH . '/templates/showDetalles.tpl');
+    }
 }
 ?>

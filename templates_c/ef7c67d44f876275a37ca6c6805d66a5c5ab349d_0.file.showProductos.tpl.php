@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-21 14:43:10
+/* Smarty version 4.2.1, created on 2023-10-24 00:55:23
   from 'C:\xampp\htdocs\web2\TPE\templates\showProductos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6533c75e642967_58110290',
+  'unifunc' => 'content_6536f9dbc665d6_77600158',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ef7c67d44f876275a37ca6c6805d66a5c5ab349d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\TPE\\templates\\showProductos.tpl',
-      1 => 1697676599,
+      1 => 1698101718,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6533c75e642967_58110290 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6536f9dbc665d6_77600158 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -34,17 +34,13 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
         <tr>
             <td>Id
             </td>
-            <td>Id_Marca
+            <td>Fabricante
             </td>
             <td>Potencia
             </td>
-            <td>Velocidad
+            <td>Info
             </td>
-            <td>Voltaje
-            </td>
-            <td>Frecuencia
-            </td>
-        </tr>
+            </tr>
     </thead>
     <tbody>
         <?php
@@ -57,21 +53,15 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Id;?>
 
                 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Id_marca;?>
+                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Fabricante;?>
 
                 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Potencia;?>
-
+HP
                 </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Velocidad;?>
 
-                </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Voltaje;?>
-
-                </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['product']->value->Frecuencia;?>
-
-                </td>
+                <td><a href="producto/<?php echo $_smarty_tpl->tpl_vars['product']->value->Id;?>
+">Ver Mas</a>                 </td>
             </tr>
         <?php
 }

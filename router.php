@@ -44,6 +44,10 @@ switch ($params[0]) {
     case 'error':
         $motorController->showErrorValidar();
         break;
+    case 'producto':
+        $motorController->getInfo($params[1]);
+
+        break;
     default:
         $motorController->showHome();
 }
