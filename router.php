@@ -42,7 +42,7 @@ switch ($params[0]) {
         $motorController->validarLogin();
         break;
     case 'error':
-        $motorController->ShowErrorValidar();
+        $motorController->showErrorValidar();
         break;
     default:
         $motorController->showHome();
