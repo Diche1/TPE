@@ -37,13 +37,12 @@ switch ($params[0]) {
         break;
     case 'login':
         $motorController->showLoginForm();
-            break;
+        break;
     case 'validar':
-            $motorController->validarLogin();
-            break;
-            case 'error':
-            $motorController -> ShowErrorValidar();    
-        
+        $motorController->validarLogin();
+        break;
+    case 'error':
+        $motorController->ShowErrorValidar();
         break;
     default:
         $motorController->showHome();
