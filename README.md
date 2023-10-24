@@ -18,10 +18,11 @@ Di Cheronimo Franco| fr4nc0d1ch3@gmail.com
 La idea es crear una base de datos para una compañia de motores electricos, en la misma asociariamos la tabla Usuario, con los administradores o personal de la empresa, proximamente se gestionaria el stock disponible con las ventas realizadas, a futuro seguramente un listado de clientes, marcas especificas, etc.
 
 ## BASE DE DATOS:
-[DB_motores_electricos.zip](https://github.com/Diche1/TPE/files/12744856/DB_motores_electricos.zip)
+[Uploading db_motores.sql…]()
 
 ## DIAGRAMA ENTIDAD-RELACION:
-![DER TPE](https://github.com/Diche1/TPE/assets/143654980/f6ca865e-c1b6-4971-b2d1-fb310e1da24a)
+![DER](https://github.com/Diche1/TPE/assets/143654980/8ee1ea19-5e03-488b-ab35-f6fc2d6b4f6d)
+
 
 
 - La tabla "Usuario", sera distinada para el ingreso de Administradores.
