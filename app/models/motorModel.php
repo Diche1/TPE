@@ -59,17 +59,27 @@ class motorModel
         return $producto;
     }
 /*obtiene un producto por categoria*/
-    function getCategoria($idmarc)
-    { 
-        $db = $this->PDO;
-/*         $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN producto ON marcas.Id=productos.Id_marca WHERE marcas.Id=?');
- */        $query = $db->prepare('SELECT productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE productos.*');
-        $query->execute ([$idmarc]);
-        $marquita = $query -> fetch (PDO::FETCH_OBJ);
+function getProductosPorMarca($idMarca){
+    $db = $this->PDO;
+    $query = $db->prepare('SELECT * FROM productos p WHERE p.Id_marca = ?');
+    $query->execute([$idMarca]);
+    $productos = $query->fetchAll(PDO::FETCH_OBJ);
 
-        return $marquita;
-    }
-    /* Hay que ahcer el get categorias mirar linea 65 */
-    /* VER MAS ( DETALLES DE LOS ITEMS ) */
+    return $productos;
 }
-?>
+// filtrado por fabricante de motor
+    function getFiltroMarca($idMarca){
+        $db = $this->PDO;
+        $query = $db->prepare('SELECT *
+                            FROM productos p
+                            INNER JOIN marcas m ON p.Id_marca = m.Id
+                            WHERE m.id = ?');
+        $query->execute([$idMarca]);
+
+        // Obtengo la respuesta con un fetchAll (porque son muchos productos)
+        $productos = $query->fetchAll(PDO::FETCH_OBJ); // arreglo de productos
+
+        return $productos;
+    }
+
+}
