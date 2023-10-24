@@ -17,9 +17,6 @@ Di Cheronimo Franco| fr4nc0d1ch3@gmail.com
 **Descripcion:**
 La idea es crear una base de datos para una compañia de motores electricos, en la misma asociariamos la tabla Usuario, con los administradores o personal de la empresa, proximamente se gestionaria el stock disponible con las ventas realizadas, a futuro seguramente un listado de clientes, marcas especificas, etc.
 
-## BASE DE DATOS:
-[Uploading db_motores.sql…]()
-
 ## DIAGRAMA ENTIDAD-RELACION:
 ![DER](https://github.com/Diche1/TPE/assets/143654980/8ee1ea19-5e03-488b-ab35-f6fc2d6b4f6d)
 
@@ -27,7 +24,7 @@ La idea es crear una base de datos para una compañia de motores electricos, en 
 
 - La tabla "Usuario", sera distinada para el ingreso de Administradores.
 - La tabla "Producto" contiene detalles sobre los motores disponibles. 
-- La tabla "Compra", esta conectada a "Productos" en una relacion 1 a N.
+- La tabla "Marca", esta conectada a "Productos" en una relacion 1 a N.
 
 En conjunto, ayuda a organizar y relacionar los datos clave en un sistema de venta de motores eléctricos.
 
