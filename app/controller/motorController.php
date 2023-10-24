@@ -118,8 +118,8 @@ class MotorController
         $this->view->showInfo($detalles);
         /* function para ver mas detalles del producto  */
     }
-    public function getCategoria ($idmarc){
-        $categoria=$this->model->getCategoria ($idmarc);
+    public function getCategoria ($Id){
+        $categoria=$this->model->getCategoria ($Id);
         $this->view->showCategoria ($categoria);
     }
 }

@@ -47,7 +47,7 @@ Class motorview
         $this->smarty->display(PATH . '/templates/showDetalles.tpl');
     }
     function showCategoria($categoria){
-        $this->smarty->assign('detalles', $categoria);
+        $this->smarty->assign('categoria', $categoria);
         $this->smarty->display(PATH . '/templates/showCategoria.tpl');
     }
 }

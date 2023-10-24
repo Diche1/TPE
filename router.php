@@ -49,7 +49,8 @@ switch ($params[0]) {
         break;
     case 'categoria':
             $motorController->getCategoria($params[1]);
+            break;
     default:
         $motorController->showHome();
-        probando;
+       
 }
