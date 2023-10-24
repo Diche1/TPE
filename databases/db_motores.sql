@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2023 a las 03:20:09
+-- Tiempo de generación: 24-10-2023 a las 03:31:22
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -57,6 +57,14 @@ CREATE TABLE `productos` (
   `Frecuencia` int(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`Id`, `Id_marca`, `Potencia`, `Velocidad`, `Voltaje`, `Frecuencia`) VALUES
+(1, 1, 2, 1400, 380, 50),
+(2, 3, 1, 1400, 220, 50);
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +76,13 @@ CREATE TABLE `usuario` (
   `nombre` varchar(90) NOT NULL,
   `password` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`Email`, `nombre`, `password`) VALUES
+('d1ch33@hotmail.com', 'FRANCO', '$2y$10$7aaNnqedwsvtzuav4CzeSuBmB/sVH1bcWSO98.WogOuX9zOlHjPly');
 
 --
 -- Índices para tablas volcadas
@@ -106,7 +121,7 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
