@@ -56,4 +56,5 @@ Class motorview
         $this->smarty->display(PATH . '/templates/showCategoria.tpl');
     }
 }
+
 ?>

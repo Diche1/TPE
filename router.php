@@ -52,9 +52,6 @@ switch ($params[0]) {
             break;
     default:
         $motorController->showHome();
-<<<<<<< HEAD
         break;
-=======
        
->>>>>>> 40f7421f895f52967e9e1fbea824957273bf5e06
 }
