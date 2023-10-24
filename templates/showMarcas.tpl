@@ -18,7 +18,7 @@
                                 </td>
                                 <td>{$marca->Fabricante}
                                 </td>
-                                <td><a href="marcas/{$marca->Id}">Ver Mas</a> {*  *}
+                                <td><a href="categoria/{$marca->Id}">Ver Mas</a> {*  *}
                                 </td>
                         </tr>
                 {/foreach}

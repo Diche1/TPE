@@ -59,13 +59,19 @@ class motorModel
         return $producto;
     }
 /*obtiene un producto por categoria*/
-    function getCategoria($idmarc)
-    {
+    function getCategoria($Id)
+    { 
         $db = $this->PDO;
+<<<<<<< HEAD
 /*         $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN producto ON marcas.Id=productos.Id_marca WHERE marcas.Id=?');
  */        $query = $db->prepare('SELECT productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE marcas.Fabricante=?');
         $query->execute ([$idmarc]);
         $marquita = $query -> fetch (PDO::FETCH_OBJ);
+=======
+        $query = $db->prepare("SELECT * FROM marcas WHERE Id = ?");
+        $query->execute([$Id]);
+        $marquita = $query->fetch(PDO::FETCH_OBJ);
+>>>>>>> 40f7421f895f52967e9e1fbea824957273bf5e06
         return $marquita;
     }
     /* Hay que ahcer el get categorias mirar linea 65 */
