@@ -107,26 +107,32 @@ class MotorController
     }
     public function showErrorValidar()
     {
+        // llamó a la vista
         $this->view->showErrorValidar();
     }
     public function showHome()
     {
+        // llamó a la vista
         $this->view->showHome();
     }
     public function getInfo($Id){
+        // Llamo las productos del modelo
         $detalles=$this->model->getInfo($Id);
+        // llamó a la vista
         $this->view->showInfo($detalles);
         /* function para ver mas detalles del producto  */
     }
     public function getCategoria ($idMarca){
+        // Llamo las productos del modelo
         $categoria=$this->model->getProductosPorMarca($idMarca);
+        // llamó a la vista
         $this->view->showCategoria ($categoria);
     }
     // filtrado por fabricante del motor
     public function showFiltroMarca($marcaId){
-        //1. Llamo las productos del modelo
+        // Llamo las productos del modelo
         $productos=$this->model->getFiltroMarca($marcaId);
-        //2. llamó a la vista
+        // llamó a la vista
        
         $this->view->showFiltro($productos);  
     }
