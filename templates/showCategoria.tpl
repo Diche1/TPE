@@ -12,11 +12,11 @@
                 </tr>
         </thead>
         <tbody>
-                {foreach from=$categoria item=$catego}
+                {foreach from=$categorias item=$categoria}
                         <tr>
-                                <td>{$catego->Id}
+                                <td>{$categoria->Id}
                                 </td>
-                                <td>{$catego->Fabricante}
+                                <td>{$categoria->Fabricante}
                                 </td>
                         </tr>
                 {/foreach}
