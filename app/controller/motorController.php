@@ -118,9 +118,16 @@ class MotorController
         $this->view->showInfo($detalles);
         /* function para ver mas detalles del producto  */
     }
-    public function getCategoria ($Id){
-        $categoria=$this->model->getCategoria ($Id);
+    public function getCategoria ($idMarca){
+        $categoria=$this->model->getProductosPorMarca($idMarca);
         $this->view->showCategoria ($categoria);
     }
+    // filtrado por fabricante del motor
+    public function showFiltroMarca($marcaId){
+        //1. Llamo las productos del modelo
+        $productos=$this->model->getFiltroMarca($marcaId);
+        //2. llamó a la vista
+       
+        $this->view->showFiltro($productos);  
+    }
 }
-?>

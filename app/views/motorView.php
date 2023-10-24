@@ -2,7 +2,7 @@
 
 require_once(PATH . '/libs/smarty/Smarty.class.php');
 
-Class motorview
+class motorview
 {
     private $smarty;
 
@@ -10,7 +10,6 @@ Class motorview
     {
         $this->smarty = new Smarty;
         $this->smarty->assign('BASE_URL', BASE_URL);
-
     }
 
     function showProductos($productos)
@@ -24,30 +23,41 @@ Class motorview
 
         $this->smarty->assign('marcas', $marcas);
         $this->smarty->display(PATH . '/templates/showMarcas.tpl');
-
     }
 
-    function showRegistro(){
+    function showRegistro()
+    {
         $this->smarty->display(PATH . '/templates/showRegistro.tpl');
     }
-     function showHome(){
+    function showHome()
+    {
         //$this->tpl->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/showHome.tpl');
     }
-    function showLoginForm(){
+    function showLoginForm()
+    {
         //$this->tpl->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/showLogin.tpl');
     }
-    function  showErrorValidar(){
+    function  showErrorValidar()
+    {
         //$this->tpl->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/errorValidacion.tpl');
     }
-    function showInfo($detalles){
+    function showInfo($detalles)
+    {
         $this->smarty->assign('detalles', $detalles);
         $this->smarty->display(PATH . '/templates/showDetalles.tpl');
     }
-    function showCategoria($categorias){
+    function showCategoria($categorias)
+    {
         $this->smarty->assign('categorias', $categorias);
+    }
+    // filtrado por fabricante 
+    function showFiltro($productos)
+    {
+        $this->smarty->assign('productos', $productos);
+        // var_dump($productos);
+        $this->smarty->display(PATH . '/templates/filtroMarca.tpl');
+    }
 }
-}
-?>

@@ -35,6 +35,10 @@ switch ($params[0]) {
     case 'altaUsuario': // agrega el usuario
         $motorController->addUsuario();
         break;
+    case 'filtradoPorMarca':
+        $marcaId = $_GET['id'];
+        $motorController->showFiltroMarca($marcaId);
+        break;
     case 'login':
         $motorController->showLoginForm();
         break;
