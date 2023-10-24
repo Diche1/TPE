@@ -12,14 +12,29 @@
                 </tr>
         </thead>
         <tbody>
-                {foreach from=$categorias item=$categoria}
+           {*      {foreach from=$categorias item=$categoria}
                         <tr>
                                 <td>{$categoria->Id}
                                 </td>
                                 <td>{$categoria->Fabricante}
                                 </td>
                         </tr>
-                {/foreach}
+                {/foreach} *}
+                {foreach from=$categorias item=$categoria}
+                        <tr>
+                            {* <td>{$detalle->Id}
+                            </td> *}
+                            <td>{$detalle->Fabricante}
+                            </td>
+                            <td>{$detalle->Potencia}HP
+                            </td>
+                            <td>{$detalle->Velocidad}RPM
+                            </td>
+                            <td>{$detalle->Voltaje}V
+                            </td>
+                            <td>{$detalle->Frecuencia}HZ
+                            </td>
+                        </tr>
         </tbody>
 </table>
 {include file= 'footer.tpl'}
