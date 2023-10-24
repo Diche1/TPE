@@ -29,7 +29,7 @@ switch ($params[0]) {
     case 'marcas': //muestra listado de categorias
         $motorController->getMarcas();
         break;
-    case 'registro': //tiene que mostrar el form
+    case 'registro': //tiene que mostrar el form para registro
         $motorController->showRegistro();
         break;
     case 'altaUsuario': // agrega el usuario

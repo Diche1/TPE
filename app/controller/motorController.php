@@ -104,6 +104,7 @@ class MotorController
                 $user = $this->view->showErrorValidar($userEmail);
             }
         }
+        
     }
     public function showErrorValidar()
     {
@@ -136,4 +137,5 @@ class MotorController
        
         $this->view->showFiltro($productos);  
     }
+
 }

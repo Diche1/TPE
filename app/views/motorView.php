@@ -31,17 +31,17 @@ class motorview
     }
     function showHome()
     {
-        //$this->tpl->assign('logged', $_SESSION['logged']);
+        $this->smarty->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/showHome.tpl');
     }
     function showLoginForm()
     {
-        //$this->tpl->assign('logged', $_SESSION['logged']);
+        $this->smarty->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/showLogin.tpl');
     }
     function  showErrorValidar()
     {
-        //$this->tpl->assign('logged', $_SESSION['logged']);
+        $this->smarty->assign('logged', $_SESSION['logged']);
         $this->smarty->display(PATH . '/templates/errorValidacion.tpl');
     }
     function showInfo($detalles)

@@ -34,8 +34,6 @@ class motorModel
     function addUsuario($Email, $nombre, $password)
     {
         $db = $this->PDO;
-        /* Cambiar en las BD contraseña por password --------------------------------  */
-        /* ----------------------------------------------------------------- */
         $query = $db->prepare('INSERT INTO `usuario`(`Email`,`nombre`,`password`) VALUES (?,?,?)');
         $query->execute([$Email, $nombre, $password]);
         return $db->lastInsertId();
