@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2023-10-20 21:45:38
+/* Smarty version 4.2.1, created on 2023-10-24 02:39:45
   from 'C:\xampp\htdocs\tpeweb\TPE\templates\showMarcas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6532d8e2004167_78774576',
+  'unifunc' => 'content_65371251a7d612_92204297',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85ea77b605fcac030964439d428ee1171920384f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpeweb\\TPE\\templates\\showMarcas.tpl',
-      1 => 1697831136,
+      1 => 1698107721,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6532d8e2004167_78774576 (Smarty_Internal_Template $_smarty_tpl) {
+function content_65371251a7d612_92204297 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -51,6 +51,8 @@ $_smarty_tpl->tpl_vars['marca']->do_else = false;
                                 <td><?php echo $_smarty_tpl->tpl_vars['marca']->value->Fabricante;?>
 
                                 </td>
+                                <td><a href="marcas/<?php echo $_smarty_tpl->tpl_vars['marca']->value->Id;?>
+">Ver Mas</a>                                 </td>
                         </tr>
                 <?php
 }

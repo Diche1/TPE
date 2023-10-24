@@ -46,8 +46,9 @@ switch ($params[0]) {
         break;
     case 'producto':
         $motorController->getInfo($params[1]);
-
         break;
+    case 'categoria':
+            $motorController->getCategorias($params[2]);
     default:
         $motorController->showHome();
 }

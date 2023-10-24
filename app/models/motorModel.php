@@ -49,7 +49,7 @@ class motorModel
         $usuario = $query->fetch(PDO::FETCH_OBJ); //usas fetch porque solo trae un dato.
         return $usuario;
     }
-
+/*ver mas detalles del producto*/
     function getInfo($Id)
     {
         $db = $this->PDO;
@@ -58,11 +58,14 @@ class motorModel
         $producto = $query->fetchAll(PDO::FETCH_OBJ);
         return $producto;
     }
-
-    function getCategorias()
+/*obtiene un producto por categoria*/
+    function getCategorias($idmarc)
     {
         $db = $this->PDO;
         $query = $db->prepare('SELECT marcas.Fabricante,productos.* FROM productos INNER JOIN marcas ON productos.Id_marca=marcas.Id WHERE marcas.Id=?');
+        $query->execute ([$idmarc]);
+        $marquita = $query -> fetch (PDO::FETCH_OBJ);
+        return $marquita;
     }
     /* Hay que ahcer el get categorias mirar linea 65 */
     /* VER MAS ( DETALLES DE LOS ITEMS ) */

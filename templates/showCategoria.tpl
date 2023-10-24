@@ -12,13 +12,11 @@
                 </tr>
         </thead>
         <tbody>
-                {foreach from=$marcas item=$marca}
+                {foreach from=$categoria item=$catego}
                         <tr>
-                                <td>{$marca->Id}
+                                <td>{$catego->Id}
                                 </td>
-                                <td>{$marca->Fabricante}
-                                </td>
-                                <td><a href="marcas/{$marca->Id}">Ver Mas</a> {*  *}
+                                <td>{$catego->Fabricante}
                                 </td>
                         </tr>
                 {/foreach}
