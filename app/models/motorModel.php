@@ -20,6 +20,19 @@ class motorModel
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
         return $productos;
     }
+   /*  function agregarProductAdmin($newProduct)
+    {
+        $db = $this->PDO;
+        $query = $db->prepare('INSERT INTO productos (Id_marca, Potencia, Velocidad, Voltaje, Frecuencia) VALUES (?,?,?,?,?)');
+        $query->execute([
+            $newProduct['Id_marca'],
+            $newProduct['Potencia'],
+            $newProduct['Velocidad'],
+            $newProduct['Voltaje'],
+            $newProduct['Frecuencia']
+        ]);
+        return 'Se inserto correctamente';
+    } */
 
     function getMarcas()
     {
@@ -78,6 +91,14 @@ function getProductosPorMarca($idMarca){
         $productos = $query->fetchAll(PDO::FETCH_OBJ); // arreglo de productos
 
         return $productos;
+    }
+
+    function addProductos(){
+        $db = $this->PDO;
+        if ($_SESSION['logged'] == true){
+
+        }
+
     }
 
 }

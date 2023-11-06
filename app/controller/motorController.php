@@ -18,6 +18,25 @@ class MotorController
         }
     }
 
+  /*   public function agregarProductAdmin($newProduct)
+    {
+        if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+            if (!empty($newProduct)) {
+                //verificamos que hayan datos nuevos para insertar
+                $resultado = $this->model->agregarProductAdmin($newProduct);
+                if ($resultado) {
+                    $productos=$this->model->getProductos();
+                    //obtengo los productos actualizados 
+                    $this->view->showProductos($productos);
+                } else{
+                    echo "Fallo la insercion de datos";
+                }
+            }
+            else{
+                echo "Datos del producto faltantes";
+            }
+        }
+    } */
     public function getProductos()
     {
         $productos = $this->model->getProductos();
@@ -37,7 +56,6 @@ class MotorController
             $Email = $_POST['Email'];
             $Nombre = $_POST['nombre'];
             $Password = $_POST['password'];
-
             // Buscar el email en la tabla de usuarios
             $usuario = $this->getUsuario($Email);
 
@@ -48,7 +66,7 @@ class MotorController
                 //redireccionamos a inicio
                 header('Location: ' . BASE_URL . 'inicio');
             } else {
-                // $this->view->showError("Ya existe este Email, no insista"); // FALTA showError
+                //$this->view->showError("Ya existe este Email, no insista"); // FALTA showError
             }
         }
     }
@@ -69,7 +87,7 @@ class MotorController
         // Destruir la sesión
         session_destroy();
 
-        // Redirigir al usuario a la página de inicio de sesión u otra página
+        // Redirigir al usuario a la página de inicio
         header('Location: ' . BASE_URL . 'login');
     }
 
@@ -86,7 +104,6 @@ class MotorController
 
             $_SESSION['LAST_ACTIVITY'] = time(); // Actualizar el último instante de actividad
         }
-
         $this->view->showLoginForm();
     }
 
@@ -104,11 +121,11 @@ class MotorController
                 $user = $this->view->showErrorValidar($userEmail);
             }
         }
-        
+
     }
     public function showErrorValidar()
     {
-        // llamó a la vista
+        // llamó a la vista al dar error.
         $this->view->showErrorValidar();
     }
     public function showHome()
@@ -116,26 +133,29 @@ class MotorController
         // llamó a la vista
         $this->view->showHome();
     }
-    public function getInfo($Id){
-        // Llamo las productos del modelo
-        $detalles=$this->model->getInfo($Id);
+    public function getInfo($Id)
+    {
+        // Llamo las productos del modelo 
+        $detalles = $this->model->getInfo($Id);
         // llamó a la vista
         $this->view->showInfo($detalles);
         /* function para ver mas detalles del producto  */
     }
-    public function getCategoria ($idMarca){
+    public function getCategoria($idMarca)
+    {
         // Llamo las productos del modelo
-        $categoria=$this->model->getProductosPorMarca($idMarca);
+        $categoria = $this->model->getProductosPorMarca($idMarca);
         // llamó a la vista
-        $this->view->showCategoria ($categoria);
+        $this->view->showCategoria($categoria);
     }
     // filtrado por fabricante del motor
-    public function showFiltroMarca($marcaId){
+    public function showFiltroMarca($marcaId)
+    {
         // Llamo las productos del modelo
-        $productos=$this->model->getFiltroMarca($marcaId);
+        $productos = $this->model->getFiltroMarca($marcaId);
         // llamó a la vista
-       
-        $this->view->showFiltro($productos);  
+
+        $this->view->showFiltro($productos);
     }
 
 }

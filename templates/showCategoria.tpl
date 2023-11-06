@@ -12,18 +12,9 @@
                 </tr>
         </thead>
         <tbody>
-           {*      {foreach from=$categorias item=$categoria}
-                        <tr>
-                                <td>{$categoria->Id}
-                                </td>
-                                <td>{$categoria->Fabricante}
-                                </td>
-                        </tr>
-                {/foreach} *}
+          
                 {foreach from=$categorias item=$categoria}
                         <tr>
-                            {* <td>{$detalle->Id}
-                            </td> *}
                             <td>{$detalle->Fabricante}
                             </td>
                             <td>{$detalle->Potencia}HP
